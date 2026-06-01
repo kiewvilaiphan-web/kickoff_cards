@@ -1,16 +1,16 @@
 const PRODUCTS = [
   { id: 1,  name: "Cristiano Ronaldo",  club: "Manchester United",      price: 250000, img: "images/Cristiano Ronaldo.png",     rarity: "legendary", stock: 12, isBestSeller: true },
   { id: 2,  name: "Lionel Messi",      club: "Argentina",   price: 250000, img: "images/messi.png",       rarity: "legendary", stock: 10, isBestSeller: true  },
-  { id: 3,  name: "Kylian Mbappe",     club: "Real Madrid",      price: 200000, img: "images/mbappe.png",       rarity: "legendary", stock: 8  },
+  { id: 3,  name: "Kylian Mbappe",     club: "Real Madrid",      price: 200000, img: "images/Mbappe.png",       rarity: "legendary", stock: 8  },
   { id: 4,  name: "Erling Haaland",      club: "Manchester City",  price: 190000, img: "images/Erling Haaland.png",     rarity: "legendary", stock: 7  },
-  { id: 5,  name: "Vinicius Junior",    club: "Real Madrid",      price: 170000, img: "images/vinicius Junior.png",        rarity: "rare",      stock: 10 },
+  { id: 5,  name: "Vinicius Junior",    club: "Real Madrid",      price: 170000, img: "images/Vinicius Junior.png",        rarity: "rare",      stock: 10 },
   { id: 6,  name: "Jude Bellingham",    club: "Real Madrid",      price: 165000, img: "images/Jude Bellingham.png",  rarity: "rare",      stock: 10 },
   { id: 7,  name: "Phil Foden ",         club: "Manchester City",  price: 155000, img: "images/Phil Foden.png",       rarity: "rare",      stock: 12 },
   { id: 8,  name: "Lamine Yamal",        club: "FC Barcelona",     price: 150000, img: "images/Lamine Yamal.png",       rarity: "rare",      stock: 9  },
   { id: 9,  name: "Bukayo Saka",       club: "Arsenal FC",       price: 140000, img: "images/Bukayo Saka.png",        rarity: "rare",      stock: 11 },
-  { id: 10, name: "Rodri",               club: "Manchester City",  price: 135000, img: "images/rodri.png",        rarity: "rare",      stock: 8  },
+  { id: 10, name: "Rodri",               club: "Manchester City",  price: 135000, img: "images/Rodri.png",        rarity: "rare",      stock: 8  },
   { id: 11, name: "Mohamed Salah",         club: "Liverpool FC",     price: 130000, img: "images/Mohamed Salah.png",       rarity: "common",    stock: 15 },
-  { id: 12, name: "Neymar Jr",          club: "Brazil", price: 250000, img: "images/neymar.png", rarity: "legendary", stock: 15, isBestSeller: true },
+  { id: 12, name: "Neymar Jr",          club: "Brazil", price: 250000, img: "images/Neymar.png", rarity: "legendary", stock: 15, isBestSeller: true },
 ];
 
 const COUPONS = {
