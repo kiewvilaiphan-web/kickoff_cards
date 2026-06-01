@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ໃບບິນ — Kickoff Cards Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans Lao', sans-serif;
+      background: #f0ece4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .receipt {
+      background: #fff;
+      width: 380px;
+      padding: 28px 24px;
+      border-radius: 4px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+      position: relative;
+    }
+
+    .receipt-header {
+      text-align: center;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px dashed #ccc;
+    }
+
+    .shop-icon { font-size: 36px; margin-bottom: 6px; }
+
+    .shop-name {
+      font-family: 'Noto Sans Lao', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #0d1b2a;
+    }
+
+    .shop-sub {
+      font-size: 11px;
+      color: #888;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+    
+    .shop-phone {
+      font-size: 12px;
+      color: #555;
+      margin-top: 5px;
+      font-weight: 600;
+    }
+
+    .receipt-meta {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .receipt-meta .row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px dashed #ccc;
+      margin: 14px 0;
+    }
+
+    .items-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: #888;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .receipt-item { margin-bottom: 10px; }
+
+    .item-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .item-detail {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #666;
+      margin-top: 3px;
+    }
+
+    .totals {
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px dashed #ccc;
+    }
+
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    .total-row.discount { color: #27ae60; }
+
+    .total-row.grand {
+      font-size: 18px;
+      font-weight: 900;
+      color: #0d1b2a;
+      border-top: 2px solid #0d1b2a;
+      margin-top: 8px;
+      padding-top: 8px;
+    }
+
+    .coupon-tag {
+      background: #fff4cc;
+      border: 1px dashed #c9a84c;
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 12px;
+      color: #9a7a2e;
+      font-weight: 700;
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    .receipt-footer {
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 2px dashed #ccc;
+    }
+
+    .barcode {
+      font-family: 'Noto Sans Lao', sans-serif;
+      letter-spacing: 4px;
+      font-size: 13px;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    .thanks {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0d1b2a;
+      margin-bottom: 4px;
+    }
+
+    .tagline { font-size: 11px; color: #aaa; }
+
+    .print-area {
+      text-align: center;
+      margin-top: 24px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .btn-print {
+      background: #0d1b2a;
+      color: #c9a84c;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: 'Noto Sans Lao', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-back {
+      background: #fff;
+      color: #0d1b2a;
+      border: 1.5px solid #0d1b2a;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: 'Noto Sans Lao', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .receipt { box-shadow: none; width: 100%; }
+      .print-area { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="receipt" id="receipt">
+  <div class="receipt-header">
+    <div class="shop-icon">⚽</div>
+    <div class="shop-name">KICKOFF CARDS</div>
+    <div class="shop-sub">Shop — Receipt</div>
+    <div class="shop-phone">📞 ໂທ: +856 20 78984385</div>
+  </div>
+
+  <div class="receipt-meta" id="receiptMeta"></div>
+
+  <hr class="divider" />
+
+  <div class="items-title">ລາຍການສິນຄ້າ</div>
+  <div id="receiptItems"></div>
+
+  <div id="couponTag"></div>
+
+  <div class="totals" id="receiptTotals"></div>
+
+  <div class="receipt-footer">
+    <div class="barcode" id="barcode">||||||||||||||||||||||||</div>
+    <div class="thanks">ຂອບໃຈທີ່ໃຊ້ບໍລິການ! 🙏</div>
+    <div class="tagline">Kickoff Cards Shop — ກາດນັກເຕະລະດັບໂລກ</div>
+  </div>
+</div>
+
+<div class="print-area">
+  <button class="btn-back" onclick="window.location.href='index.html'">⬅ ຍ້ອນກັບ</button>
+  <button class="btn-print" onclick="window.print()">🖨 ພິມໃບບິນ</button>
+</div>
+
+<script>
+  function fmt(n) {
+    return n.toLocaleString('lo-LA') + ' ₭';
+  }
+
+  function renderReceipt() {
+    const data = JSON.parse(localStorage.getItem('kcs_receipt') || 'null');
+    if (!data) {
+      document.getElementById('receiptItems').innerHTML =
+        '<p style="color:#999;text-align:center;padding:20px">ບໍ່ພົບຂໍ້ມູນໃບບິນ</p>';
+      return;
+    }
+
+    const receiptNo = 'KCS' + Date.now().toString().slice(-8);
+
+    document.getElementById('receiptMeta').innerHTML = `
+      <div class="row"><span>ໃບບິນເລກ:</span><span>${receiptNo}</span></div>
+      <div class="row"><span>• ວັນທີ/ເວລາ:</span><span>${data.date}</span></div>
+      <div class="row"><span>• ພະນັກງານ:</span><span>ພະນັກງານຂາຍ</span></div>
+      <div class="row"><span>• ຊື່ລູກຄ້າ:</span><span>${data.customerName || 'ລູກຄ້າທົ່ວໄປ'}</span></div>
+      <div class="row"><span>• ເບີໂທລະສັບ:</span><span>${data.customerPhone || '-'}</span></div>
+    `;
+
+    document.getElementById('receiptItems').innerHTML = data.items.map(item => `
+      <div class="receipt-item">
+        <div class="item-name">${item.name}</div>
+        <div class="item-detail">
+          <span>${fmt(item.price)} × ${item.qty}</span>
+          <span>${fmt(item.subtotal)}</span>
+        </div>
+      </div>
+      <hr class="divider" />
+    `).join('');
+
+    if (data.coupon) {
+      document.getElementById('couponTag').innerHTML =
+        `<div class="coupon-tag">🎟 ລະຫັດส่วนຫຼຸດ: ${data.coupon}</div>`;
+    }
+
+    let totalsHTML = `
+      <div class="total-row"><span>ລວມ</span><span>${fmt(data.subtotal)}</span></div>
+    `;
+    if (data.discount > 0) {
+      totalsHTML += `<div class="total-row discount"><span>ສ່ວນຫຼຸດ</span><span>−${fmt(data.discount)}</span></div>`;
+    }
+    totalsHTML += `<div class="total-row grand"><span>ລວມທັງໝົດ</span><span>${fmt(data.total)}</span></div>`;
+    document.getElementById('receiptTotals').innerHTML = totalsHTML;
+
+    document.getElementById('barcode').textContent = receiptNo;
+  }
+
+  renderReceipt();
+</script>
+</body>
+</html>
