@@ -6,11 +6,21 @@
   <title>Kickoff Cards Shop — POS</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     body {
       font-family: 'Noto Sans Lao', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
     
+    main {
+      flex: 1;
+    }
+
     .product-card {
       position: relative;
     }
@@ -51,7 +61,7 @@
       }
 
       main {
-        flex-direction: column; 
+        flex-direction: column;
         padding: 10px;
         gap: 15px;
       }
@@ -61,7 +71,7 @@
       }
 
       .product-grid {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important; 
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
         gap: 10px !important;
       }
 
@@ -70,6 +80,100 @@
         align-items: flex-start !important;
         gap: 6px;
       }
+
+      .store-footer-container {
+        flex-direction: column !important;
+        gap: 25px !important;
+        text-align: center;
+      }
+      .footer-col {
+        align-items: center !important;
+      }
+      .footer-col h3::after {
+        left: 50% !important;
+        transform: translateX(-50%);
+      }
+    }
+
+    /* ແຖບຂໍ້ມູນຮ້ານ (Store Footer) */
+    .store-footer {
+      background-color: #0b1523; 
+      color: #e2e8f0;
+      padding: 30px 20px;
+      margin-top: 40px;
+      border-top: 3px solid #c9a84c; 
+    }
+
+    .store-footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-col {
+      flex: 1;
+      min-width: 220px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-col h3 {
+      color: #c9a84c; 
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0;
+      padding-bottom: 8px;
+      position: relative;
+    }
+
+    .footer-col h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      border-bottom: 2px solid #c9a84c;
+    }
+
+    .footer-col p, .footer-col span {
+      font-size: 14px;
+      color: #94a3b8;
+      margin: 0;
+      line-height: 1.6;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 12px;
+      margin-top: 5px;
+    }
+
+    .footer-socials a {
+      color: #0b1523;
+      background-color: #94a3b8;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .footer-socials a:hover {
+      background-color: #c9a84c;
+      color: #0b1523;
+      transform: translateY(-3px);
     }
   </style>
 </head>
@@ -86,13 +190,12 @@
   <div class="header-right" style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
     <span class="clock" id="clock">00:00:00</span>
     <span style="font-size: 13px; color: #c9a84c; font-weight: 600; background: rgba(201,168,76,0.1); padding: 4px 12px; border-radius: 4px; border: 1px solid rgba(201,168,76,0.2); display: flex; align-items: center; gap: 4px;">
-      📞 ຕິດຕໍ່ຮ້ານ: 20 78984385
+      📞 ໂທ: 20 78984385
     </span>
   </div>
 </header>
 
 <main>
-
   <section class="product-panel">
     <div class="search-bar">
       <input type="text" id="searchInput" placeholder="ຄົ້ນຫາສິນຄ້າ... (ຊື່ ຫຼື ທີມ)" />
@@ -161,6 +264,40 @@
     </div>
   </aside>
 </main>
+
+<footer class="store-footer">
+  <div class="store-footer-container">
+    
+    <div class="footer-col">
+      <h3>Kickoff Cards Shop</h3>
+      <p>ຮ້ານຄ້າກາດນັກເຕะບານລະດັບໂລກ ບໍລິການ POS ວ່ອງໄວທັນໃຈ</p>
+      <div class="footer-socials">
+        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>📍 ທີ່ຢູ່ຮ້ານ</h3>
+      <p>ບ້ານ ສີບຸນເຮືອງ, ເມືອງ ສີໂຄດຕະບອງ, ນະຄອນຫຼວງວຽງຈັນ</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>📞 ຕິດຕໍ່ຮ້ານ</h3>
+      <p><i class="fas fa-phone-alt"></i> ໂທ: 20 78984385</p>
+      <p><i class="fas fa-envelope"></i> ອີເມລ: kiew@gmail.com</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>🕒 ເວລາເປີດບໍລິການ</h3>
+      <p>ຈັນ - ເສົາ: 10:00 - 22:00 ນາທີ</p>
+      <p>ອາທິດ: 10:00 - 20:00 ນາທີ</p>
+    </div>
+
+  </div>
+</footer>
 
 <div class="modal-overlay" id="confirmModal">
   <div class="modal">
